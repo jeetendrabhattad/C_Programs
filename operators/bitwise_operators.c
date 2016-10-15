@@ -12,24 +12,70 @@ int Menu()
 		printf("3. Toggle Bit.\n");
 		printf("4. Turn Off RightMost 1 bit.\n");
 		printf("5. Get N bits from position.\n");
-		printf("6. Exit.\n");
+		printf("6. Count 1 bits.\n");
+		printf("7. Count 0 bits.\n");
+		printf("8. Get N Bits from Position P.\n");
+		printf("9. Exit.\n");
 		scanf("%d", &choice);
-	}while(choice < 0 || choice > 6);
+	}while(choice < 0 || choice > 9);
 
 	return choice;
+}
+
+int CountNoOfOneBits(const int Number)
+{
+    unsigned int x = 1;
+    int count = 0;
+    while(x)
+    {
+        if(x & Number)
+            count++;
+        x = x << 1;
+    }
+    return count;
+}
+
+int CountNoOfZeroBits(const int Number)
+{
+    unsigned int x = 1;
+    int count = 0;
+    while(x)
+    {
+        if(x & Number == 0)
+            count++;
+        x = x << 1;
+    }
+    return count;
+}
+
+int GetNBitsFromPosition(const int Number, const int position, const int noOfBits)
+{
+    int result = 0;
+    int x = (1<<noOfBits) - 1;
+    x = x << (position - noOfBits);
+    result = Number & x;
+    result = result>>(position - noOfBits);
+    return result;
+}
+//Exercise 2.6
+int SetBits(int number1, int p, int n, int number2)
+{
+    int x = (1<<n)-1;
+    number2_part = number2 & x;
+
+    number1 = TurnOffBits(number1, p, n);
+
+    number2_part = number2_part << (p - n);
+
+    return number1 | number2_part;
 }
 
 int TurnOffBitPosition( const int Number, const int BitPosition )
 {
 	int x = 1;
-	int result = Number;
 	x = x << (BitPosition - 1);
-	if( x & Number )
-	{
-		x = ~x;
-		result = Number & x;
-	}
-	return result;
+	x = ~x;
+    return Number & x;
 }
 
 int TurnOnBitPosition( const int Number, const int BitPosition )
@@ -144,7 +190,37 @@ void BitwiseOperatorDemo()
 				printf("\nResult after getting %d bits of %d after position %d is %d.\n", iNoOfBits, iNumber, iPosition, result);
 			}
 			break;
-			case 6:
+            case 6:
+            {
+                int number;
+                printf("Enter Number:-");
+                scanf("%d", &number);
+                printf("\n Number of 1 bits in given number %d are %d\n", number, CountNoOfOneBits(number));
+            }
+            break;
+            case 7:
+            {
+                int number;
+                printf("Enter Number:-");
+                scanf("%d", &number);
+                printf("\n Number of 0 bits in given number %d are %d\n", number, CountNoOfOneBits(number));
+            }
+            break;
+            case 8:
+            {
+                int number;
+                int position, noOfBits;
+                printf("\nEnter Number:-");
+                scanf("%d", &number);
+                printf("\nEnter Position:-");
+                scanf("%d", &position);
+                printf("\nEnter Number of bits:-");
+                scanf("%d", &noOfBits);
+
+                printf("\n %d bits from position %d of %d are %d\n",noOfBits, position, number, GetNBitsFromPosition(number, position, noOfBits));
+            }
+            break;
+			case 9:
 			{
 				exit(0);
 			}

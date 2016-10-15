@@ -3,6 +3,7 @@
 // Scope is File i.e accessible throughout only this file.
 // storage is static
 // linkage is intern
+// lifetime is global
 // cannot be accessed in any other file of same process.
 static int iGlobal = 20;
 
