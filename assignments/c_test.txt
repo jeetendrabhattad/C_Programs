@@ -1,0 +1,82 @@
+How do you declare an array of N pointers to functions returning  pointers to functions returning pointers to characters?
+
+What is the difference between calloc() & malloc() ?
+
+Explain realloc with syntax.
+
+How to reduce a final size of executable ?
+
+Write down the equivalent pointer expression for referring the same element a[i][j][k][l] ?
+
+Difference between const char* p and char const* p
+
+Write a program to search for data in a linked list ?
+
+Which bitwise operator is suitable for checking whether a particular bit is on or off?
+write program for same.
+
+Bitwise | can be used to set multiple bits in number ?
+
+Trace the output:-
+1) unsigned int res;
+res = (64 >>(2+1-2)) & (~(1<<2));
+printf("%d\n", res); 
+
+2) struct a
+   {
+	float category:5;
+	char scheme:4;
+   };
+   printf("size=%d",sizeof(struct a)); 
+
+3) printf("%%%%\n");
+
+4) Are the three declarations
+char **apple, char *apple[], and char apple[][] same? 
+if different what is the difference?
+
+5) 
+How many times will the loop bodies execute in the following loops
+int x = 4, y = 50;
+do
+{
+	x += 8;
+}while( x < y );
+
+6) Difference between expression *ptr++ and ++*ptr.
+
+7) int main() {
+     char str[] = "basic";
+     char *s = str;
+     printf("%s ", s++ +3);
+     printf("%s",s);
+     return 0;
+ }
+
+8) What will be the output of the program ? 
+int main()
+{
+   printf(5+"Good Morning\n");
+   return 0;
+} 
+
+9) Trace the output
+int
+main ()
+{
+  int i = 3, *j, k;
+  j = &i;
+  printf ("%d\n", i ** j * i + *j);
+  return 0;
+}
+
+10) Trace the output
+int
+main ()
+{
+  char p[] = "%d\n";
+  p[1] = 'c';
+  printf (p, 65);
+  return 0;
+}
+

@@ -1,3 +1,12 @@
+/*
+   H.W : a. Accept 2 numbers, position and number of bits to swapped of the 2.
+         b. Write a program to fit following fields in 1 integer (packetize)
+            i. Flag : 1 bit CRC : 7 bits Length : 12 bits Data : 12 bits
+         c. Write a program to accept a packet having data in above format and 
+            extract the respective information.
+         d. Write a program to add 2 numbers without using arithmetic operator.
+         e. Write a program to check if number is divisible by 8.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
